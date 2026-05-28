@@ -62,31 +62,24 @@
 
 ## 화면 구성
 
-> 📸 스크린샷을 아래 각 항목에 추가해주세요.
-
 ### 로그인
+<img width="200" alt="로그인" src="https://github.com/user-attachments/assets/620513b0-7a2b-47e9-9de4-27819cc79808" />
 
-| 로그인 |
-| :---: |
-| &nbsp; |
 
 ### 홈 · 출퇴근
+<img width="200" alt="메인페이지" src="https://github.com/user-attachments/assets/3ab7eefa-acd0-42d3-8484-fa56327e8a10" />
 
-| 홈 (오늘 배치) | 출퇴근 |
-| :---: | :---: |
-| &nbsp; | &nbsp; |
 
 ### QR 출입증 · 근태
-
-| QR 출입증 | 근태 이력 |
-| :---: | :---: |
-| &nbsp; | &nbsp; |
+<img width="200" alt="QR페이지" src="https://github.com/user-attachments/assets/00f73769-f58c-4845-87e6-1a6b28dd7c66" />
+<img width="200" alt="출결 내역" src="https://github.com/user-attachments/assets/f6efd72a-5146-4660-ab20-56d7ed2983cb" />
 
 ### 프로필 · 기타
+<img width="200" alt="프로필 페이지" src="https://github.com/user-attachments/assets/57064247-ed20-4c7a-acf6-a8b33b4d60b4" />
+<img width="200" alt="구역 배치 이력" src="https://github.com/user-attachments/assets/c29b4d45-01a1-4c1f-b8aa-8bb698ee25ed" />
+<img width="200" alt="안전 사고 이력" src="https://github.com/user-attachments/assets/8e00bccb-d74a-4077-a2b1-30081d867915" />
+<img width="200" alt="서류 현황" src="https://github.com/user-attachments/assets/810ddc02-597c-4d42-83e1-aceadc231643" />
 
-| 프로필 | 안전 서류 | 사고 이력 | 배치 상세 |
-| :---: | :---: | :---: | :---: |
-| &nbsp; | &nbsp; | &nbsp; | &nbsp; |
 
 <br/>
 
@@ -106,43 +99,49 @@
 
 <br/>
 
-## 앱 기능 테스트
+  ## 앱 기능 테스트
 
-### 로그인 / 인증
+  ### 로그인 / 인증
 
-| 시나리오 | 결과 | 비고 |
-| --- | :---: | --- |
-| 정상 로그인 | &nbsp; | &nbsp; |
-| 잘못된 이름·전화번호 입력 | &nbsp; | &nbsp; |
-| 로그아웃 후 토큰 삭제 확인 | &nbsp; | &nbsp; |
-| 미인증 상태에서 보호 경로 접근 | &nbsp; | &nbsp; |
+  https://github.com/user-attachments/assets/67cff865-3068-4c00-ba59-966aea10e4d0
 
-### 출퇴근
+  | 시나리오 | 결과 | 비고 |
+  | :---: | :---: | :---: |
+  | 정상 로그인 | ✅ | - |
+  | 잘못된 이름·전화번호 입력 | ✅ | 근무자 명단에 없는 이름/전화번호 입력 |
+  | 로그아웃 후 토큰 삭제 확인 | ✅ | - |
+  | 미인증 상태에서 보호 경로 접근 | ✅ | `/tabs/home`, `/tabs/pass` 직접 입력 시 로그인 페이지 유지 확인 |
 
-| 시나리오 | 결과 | 비고 |
-| --- | :---: | --- |
-| 출근 처리 | &nbsp; | &nbsp; |
-| 퇴근 처리 | &nbsp; | &nbsp; |
-| 이미 출근한 상태에서 출근 재시도 | &nbsp; | &nbsp; |
+  ### 출퇴근
 
-### 실시간 배치 알림 (SSE)
+  https://github.com/user-attachments/assets/9309e86d-2bea-41ab-82ae-3dea7f33da29
 
-| 시나리오 | 결과 | 비고 |
-| --- | :---: | --- |
-| 관리자가 배치 확정 후 앱에서 알림 수신 | &nbsp; | &nbsp; |
-| SSE 연결 끊김 후 재연결 | &nbsp; | &nbsp; |
+  | 시나리오 | 결과 | 비고 |
+  | :---: | :---: | :---: |
+  | 출근 처리 | ✅ | - |
+  | 퇴근 처리 | ✅ | - |
+  | 이미 출근한 상태에서 출근 재시도 | ✅ | 출근 버튼 비활성화로 중복 요청 원천 차단 |
 
-### QR 출입증
+  ### 실시간 배치 알림 (SSE)
 
-| 시나리오 | 결과 | 비고 |
-| --- | :---: | --- |
-| QR 코드 정상 생성 | &nbsp; | &nbsp; |
+  https://github.com/user-attachments/assets/189abe55-0b7d-4fa5-97e5-5a7f1bacaacb
 
-### 근태 이력
+  | 시나리오 | 결과 | 비고 |
+  | :---: | :---: | :---: |
+  | 관리자가 배치 확정 후 앱에서 알림 수신 | ✅ | 배치 확정·초기화 시 실시간 알림 수신 및 화면 즉시 반영 확인 |
+  | SSE 연결 끊김 후 재연결 | ✅ | 모바일 와이파이 연결 해제 후 재연결 시 자동 복구 확인 |
 
-| 시나리오 | 결과 | 비고 |
-| --- | :---: | --- |
-| 근태 이력 조회 | &nbsp; | &nbsp; |
+  ### 근무 기록 / 근무자 정보 / 기타 이력 조회
+
+  https://github.com/user-attachments/assets/90793834-52b8-4dfa-b5b5-31c32b54772d
+
+  | 시나리오 | 결과 | 비고 |
+  | :---: | :---: | :---: |
+  | 근태 이력 조회 | ✅ | - |
+  | 근무자 상세 정보 조회 | ✅ | - |
+  | 안전 사고 이력 조회 | ✅ | - |
+  | 구역 배치 이력 조회 | ✅ | - |
+  | 서류 현황 조회 | ✅ | - |
 
 <br/>
 
